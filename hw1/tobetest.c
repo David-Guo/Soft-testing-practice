@@ -78,6 +78,29 @@ const char* NextDay(int year, int month, int day) {
 }
 
 
-
-
+const char* Commission(int locks, int stocks, int barrels) {
+    int lockPrice = 45;
+    int stockPrice = 35;
+    int barrelPrice = 25;
+    int commission;
+    int sales;
+    static char output[10];
+    if (locks < 0 || locks > 70) return "Invalid input";
+    if (stocks < 0 || stocks > 80) return "Invalid input";
+    if (barrels < 0 || barrels > 90) return "Invalid input";
+    sales = locks * lockPrice + stocks * stockPrice + barrels * barrelPrice;
+    if (sales > 1800) {
+        commission = 0.1 * 1000;
+        commission = commission + 0.15 * 1800;
+        commission = commission + 0.2 * (sales - 1800);
+    }
+    else if (sales > 1000) {
+        commission = 0.1 * 1000;
+        commission = commission + 0.15 * (sales - 1000);
+    }
+    else 
+        commission = 0.1 * sales;
+    sprintf(output, "%d", commission);
+    return output;
+}
 
