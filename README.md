@@ -1,6 +1,7 @@
 ## Google test 安装：
 
 环境：ubuntu 14.04
+
 编译器：g++
 
 1. Get the googletest framework
@@ -27,17 +28,18 @@
  
 `test.cpp` 文件：
 
-    #include <gtest/gtest.h>
-    TEST(MathTest, TwoPlusTwoEqualsFour) {
-        EXPECT_EQ(2 + 2, 4);
-    }
-    int main(int argc, char **argv) {
-        ::testing::InitGoogleTest( &argc, argv );
-        return RUN_ALL_TESTS();
-    }
+``C++
+#include <gtest/gtest.h>
+TEST(MathTest, TwoPlusTwoEqualsFour) {
+    EXPECT_EQ(2 + 2, 4);
+}
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest( &argc, argv );
+    return RUN_ALL_TESTS();
+}
 
-    $  g++ -Wall -o test test.cpp  -lgtest -lgtest_main -lpthread
-
+$  g++ -Wall -o test test.cpp  -lgtest -lgtest_main -lpthread
+``
 
 ## 参考
 

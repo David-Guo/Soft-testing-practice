@@ -98,6 +98,22 @@ TEST(Commission, StrongRobust) {
 
 }
 
+// decision table based testing
+TEST(TriangleTest, decision_table_base) {
+
+	EXPECT_STREQ("NotATriangle", Triangle(4,1,2));
+	EXPECT_STREQ("NotATriangle", Triangle(1,4,2));
+	EXPECT_STREQ("NotATriangle", Triangle(1,2,4));
+	EXPECT_STREQ("Equilateral", Triangle(5,5,5));
+	EXPECT_STREQ("Isosceles", Triangle(2,2,3));
+	EXPECT_STREQ("Isosceles", Triangle(2,3,2));
+	EXPECT_STREQ("Isosceles", Triangle(3,2,2));
+	EXPECT_STREQ("Scalene", Triangle(3,4,5));
+	EXPECT_STREQ("Scalene", Triangle(5,3,4));
+	EXPECT_STREQ("Scalene", Triangle(3,5,4));
+	EXPECT_STREQ("Right triangle", Triangle(3,4,6));
+}
+
 int main(int argc, char ** argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
