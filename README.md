@@ -28,7 +28,7 @@
  
 `test.cpp` 文件：
 
-``C++
+```C++
 #include <gtest/gtest.h>
 TEST(MathTest, TwoPlusTwoEqualsFour) {
     EXPECT_EQ(2 + 2, 4);
@@ -39,7 +39,7 @@ int main(int argc, char **argv) {
 }
 
 $  g++ -Wall -o test test.cpp  -lgtest -lgtest_main -lpthread
-``
+``````
 
 ## 参考
 
